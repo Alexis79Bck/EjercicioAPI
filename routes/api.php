@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\MovieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::resource('blog',BlogController::class);
-Route::resource('book',BlogController::class);
-Route::resource('movie',BlogController::class);
+Route::resource('blog',BlogController::class)->only(['index','show','store','update','destroy']);
+Route::resource('book',BookController::class)->only(['index','show','store','update','destroy']);
+Route::resource('movie',MovieController::class)->only(['index','show','store','update','destroy']);
